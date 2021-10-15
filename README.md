@@ -1,6 +1,11 @@
-# meryllplayground
+# Smart Translator
 
-Welcome to my Adobe I/O Application!
+Welcome to Smart Translator! This small application has been built as an Adobe Experience Cloud extension using [Adobe Developer App Builder](https://developer.adobe.com/app-builder/docs/overview/).
+
+At this stage, it is intended to showcase how to integrate a 3rd party API within an App Builder application.
+It is using the Google Translation API in order to translate texts from a source language to a target language.
+
+The list of languages available is fetched from the Google Translation API as well, and is localized depending on the user's defined locale in the Adobe Experience Cloud.
 
 ## Setup
 
@@ -36,7 +41,7 @@ local serverless stack and also run your actions locally use the `aio app run --
 # AIO_RUNTIME_NAMESPACE=
 ```
 
-### `manifest.yml`
+### `ext.config.yml`
 
 - List your backend actions under the `actions` field within the `__APP_PACKAGE__`
 package placeholder. We will take care of replacing the package name placeholder
@@ -52,14 +57,14 @@ code.
 
   1. **Packaged action file**: Add your action's dependencies to the root
    `package.json` and install them using `npm install`. Then set the `function`
-   field in `manifest.yml` to point to the **entry file** of your action
+   field in `ext.config.yml` to point to the **entry file** of your action
    folder. We will use `parcelJS` to package your code and dependencies into a
    single minified js file. The action will then be deployed as a single file.
    Use this method if you want to reduce the size of your actions.
 
   2. **Zipped action folder**: In the folder containing the action code add a
      `package.json` with the action's dependencies. Then set the `function`
-     field in `manifest.yml` to point to the **folder** of that action. We will
+     field in `ext.config.yml` to point to the **folder** of that action. We will
      install the required dependencies within that directory and zip the folder
      before deploying it as a zipped action. Use this method if you want to keep
      your action's dependencies separated.
