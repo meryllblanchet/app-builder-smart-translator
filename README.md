@@ -7,6 +7,8 @@ It is using the Google Translation API in order to translate texts from a source
 
 The list of languages available is fetched from the Google Translation API as well, and is localized depending on the user's defined locale in the Adobe Experience Cloud.
 
+![image](smart-translator-screenshot.png)
+
 ## Setup
 
 - Populate the `.env` file in the project root and fill it as shown [below](#env)
